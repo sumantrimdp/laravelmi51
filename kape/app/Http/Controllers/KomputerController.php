@@ -12,7 +12,12 @@ class KomputerController extends Controller
      */
     public function index()
     {
-        //
+         // panggil model Ruang
+        $hasil = komputer ::all();
+        // cek isi variabel $hasil
+        // cek isi variabel $hasil
+        //dd($hasil);
+        return view('komputer.index')->with('hasil', $hasil);
     }
 
     /**

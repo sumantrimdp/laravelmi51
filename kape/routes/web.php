@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\KomputerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RuangController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,4 +19,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route ::resource('/ruang', RuangController::class);
+Route ::resource('/komputer', KomputerController::class);
 require __DIR__.'/auth.php';
