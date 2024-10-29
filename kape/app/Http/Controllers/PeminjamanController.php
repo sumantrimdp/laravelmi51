@@ -12,7 +12,8 @@ class PeminjamanController extends Controller
      */
     public function index()
     {
-        //
+        $hasil = Peminjaman ::all();
+        return view('peminjaman.index')->with('hasil', $hasil);
     }
 
     /**

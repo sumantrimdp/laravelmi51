@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Peminjaman extends Model
 {
     use HasFactory;
+
+    protected $table = 'peminjaman';
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id_peminjaman', 'id');
+
+    }
 }
